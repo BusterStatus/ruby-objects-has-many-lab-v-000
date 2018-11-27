@@ -10,10 +10,10 @@ class Artist
   end
  
   def add_song(song)
-    @songs << song
-    @@songs << song
+    if @songs.include?(song) === false
+      @@songs << song
+    end
     song.artist = self
-  end
   
   def add_song_by_name(name)
     song = Song.new(name)
